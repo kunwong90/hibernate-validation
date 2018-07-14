@@ -39,8 +39,8 @@ public class Main {
 
 
         PlaceName placeName = new PlaceName();
-        placeName.setChName("中文");
-        placeName.setEnName("Chinese");
+        placeName.setChName("                                            ");
+        placeName.setEnName("   11 ");
         placeName.setPassword("1111");
         placeName.setPasswordVerify("1111");
         ValidationUtil.validator(placeName);

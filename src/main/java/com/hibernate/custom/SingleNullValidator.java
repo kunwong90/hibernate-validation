@@ -1,6 +1,7 @@
 package com.hibernate.custom;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -25,7 +26,7 @@ public class SingleNullValidator implements ConstraintValidator<SingleNull, Obje
         try {
             String firstValue = BeanUtils.getProperty(object, firstField);
             String secondValue = BeanUtils.getProperty(object, secondField);
-            return firstValue != null || secondValue != null;
+            return StringUtils.isNotBlank(firstValue) || StringUtils.isNotBlank(secondValue);
         } catch (Exception e) {
             return false;
         }
